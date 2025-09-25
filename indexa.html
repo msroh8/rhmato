@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solving Congruence Equations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .step {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            font-family: 'Tajawal', sans-serif; /* Font for Arabic content */
+        }
+        .step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        code {
+            font-family: monospace;
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            direction: ltr;
+            display: inline-block;
+        }
+        .assignment-header {
+            font-family: 'Tajawal', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div dir="rtl" class="assignment-header text-center p-4 bg-white border-b mb-6 shadow-sm">
+        <h2 class="text-xl font-bold text-gray-800">مقرر التشفير_18082</h2>
+        <p class="text-md text-gray-600 mt-1">أستاذ المقرر: رحمات بودياتو</p>
+        <p class="text-md text-gray-600">الطالب / محمد منصور مجممي 447002510</p>
+    </div>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Solving Linear Congruence Equations</h1>
+            <p class="text-lg text-gray-600 mt-2">An interactive step-by-step guide to finding the integer value of x.</p>
+        </header>
+
+        <main class="space-y-8">
+            <!-- Equation A -->
+            <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <h2 class="text-2xl font-semibold mb-4 md:mb-0">a. Equation <code>4x ≡ 2 (mod 3)</code></h2>
+                    <button onclick="showExplanation('a')" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors">
+                        Start Explanation
+                    </button>
+                </div>
+                <div id="explanation-a" class="mt-6 border-t pt-4 space-y-3"></div>
+            </section>
+
+            <!-- Equation B -->
+            <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <h2 class="text-2xl font-semibold mb-4 md:mb-0">b. Equation <code>7x ≡ 4 (mod 9)</code></h2>
+                    <button onclick="showExplanation('b')" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors">
+                        Start Explanation
+                    </button>
+                </div>
+                <div id="explanation-b" class="mt-6 border-t pt-4 space-y-3"></div>
+            </section>
+
+            <!-- Equation C -->
+            <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <h2 class="text-2xl font-semibold mb-4 md:mb-0">c. Equation <code>5x ≡ 3 (mod 11)</code></h2>
+                    <button onclick="showExplanation('c')" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors">
+                        Start Explanation
+                    </button>
+                </div>
+                <div id="explanation-c" class="mt-6 border-t pt-4 space-y-3"></div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const explanations = {
+            a: {
+                title: "شرح حل 4x ≡ 2 (mod 3)",
+                steps: [
+                    "<strong>الخطوة 1: تبسيط المعادلة.</strong><br>المعامل <code>4</code> أكبر من المقياس <code>3</code>. يمكننا تبسيطه بأخذ باقي قسمة <code>4</code> على <code>3</code>.",
+                    "<code>4 mod 3 = 1</code>",
+                    "لذا، تصبح المعادلة: <code>1x ≡ 2 (mod 3)</code> أو ببساطة <code>x ≡ 2 (mod 3)</code>.",
+                    "<strong>الخطوة 2: إيجاد الحل.</strong><br>المعادلة المبسطة تخبرنا مباشرةً أن <code>x</code> يجب أن يساوي <code>2</code> عند مقياس <code>3</code>.",
+                    "أبسط عدد صحيح موجب يحقق هذا هو <code>x = 2</code>.",
+                    "<strong>الخطوة 3: التحقق من الحل.</strong><br>نعوض <code>x = 2</code> في المعادلة الأصلية: <code>4 * 2 = 8</code>.",
+                    "هل <code>8 ≡ 2 (mod 3)</code>؟ نعم، لأن <code>8 ÷ 3 = 2</code> والباقي <code>2</code>.",
+                    "<strong class='text-green-600'>إذن، الحل الصحيح هو x = 2.</strong>"
+                ]
+            },
+            b: {
+                title: "شرح حل 7x ≡ 4 (mod 9)",
+                steps: [
+                    "<strong>الخطوة 1: تحليل المعادلة.</strong><br>المعامل <code>7</code> أصغر من المقياس <code>9</code>، لذلك لا نحتاج لتبسيطه. علينا إيجاد عدد <code>x</code> بحيث حاصل ضرب <code>7x</code> يترك باقي <code>4</code> عند قسمته على <code>9</code>.",
+                    "<strong>الخطوة 2: البحث عن حل بالتجربة.</strong><br>لنجرب بعض القيم الصغيرة لـ <code>x</code>:",
+                    "إذا كان <code>x = 1</code>:  <code>7 * 1 = 7</code>.  <code>7 mod 9 = 7</code>. (خطأ)",
+                    "إذا كان <code>x = 2</code>:  <code>7 * 2 = 14</code>. <code>14 mod 9 = 5</code>. (خطأ)",
+                    "إذا كان <code>x = 3</code>:  <code>7 * 3 = 21</code>. <code>21 mod 9 = 3</code>. (خطأ)",
+                    "إذا كان <code>x = 4</code>:  <code>7 * 4 = 28</code>. <code>28 mod 9 = 1</code>. (خطأ)",
+                    "إذا كان <code>x = 5</code>:  <code>7 * 5 = 35</code>. <code>35 mod 9 = 8</code>. (خطأ)",
+                    "إذا كان <code>x = 6</code>:  <code>7 * 6 = 42</code>. <code>42 mod 9 = 6</code>. (خطأ)",
+                    "إذا كان <code>x = 7</code>:  <code>7 * 7 = 49</code>. <code>49 mod 9 = 4</code>. (صحيح!)",
+                    "<strong>الخطوة 3: التحقق من الحل.</strong><br>وجدنا أن <code>x = 7</code> هو الحل.",
+                    "<strong class='text-green-600'>إذن، الحل الصحيح هو x = 7.</strong>"
+                ]
+            },
+            c: {
+                title: "شرح حل 5x ≡ 3 (mod 11)",
+                steps: [
+                    "<strong>الخطوة 1: تحليل المعادلة.</strong><br>المعامل <code>5</code> أصغر من المقياس <code>11</code>. نبحث عن عدد <code>x</code> بحيث حاصل ضرب <code>5x</code> يترك باقي <code>3</code> عند قسمته على <code>11</code>.",
+                    "<strong>الخطوة 2: البحث عن حل بالتجربة.</strong><br>لنجرب بعض القيم لـ <code>x</code>:",
+                    "إذا كان <code>x = 1</code>:  <code>5 * 1 = 5</code>.   <code>5 mod 11 = 5</code>. (خطأ)",
+                    "إذا كان <code>x = 2</code>:  <code>5 * 2 = 10</code>.  <code>10 mod 11 = 10</code>. (خطأ)",
+                    "إذا كان <code>x = 3</code>:  <code>5 * 3 = 15</code>.  <code>15 mod 11 = 4</code>. (خطأ)",
+                    "إذا كان <code>x = 4</code>:  <code>5 * 4 = 20</code>.  <code>20 mod 11 = 9</code>. (خطأ)",
+                    "إذا كان <code>x = 5</code>:  <code>5 * 5 = 25</code>.  <code>25 mod 11 = 3</code>. (صحيح!)",
+                    "<strong>الخطوة 3: التحقق من الحل.</strong><br>وجدنا أن <code>x = 5</code> يحقق المعادلة.",
+                    "<strong class='text-green-600'>إذن، الحل الصحيح هو x = 5.</strong>"
+                ]
+            }
+        };
+
+        let explained = { a: false, b: false, c: false };
+
+        function showExplanation(equationKey) {
+            if (explained[equationKey]) return;
+
+            const container = document.getElementById(`explanation-${equationKey}`);
+            const data = explanations[equationKey];
+            container.innerHTML = ''; // Clear old content
+
+            data.steps.forEach((stepText, index) => {
+                setTimeout(() => {
+                    const stepElement = document.createElement('div');
+                    // Add text-right for proper alignment of RTL text in an LTR container
+                    stepElement.className = 'p-4 bg-gray-100 rounded-md border border-gray-200 step text-right';
+                    stepElement.setAttribute('dir', 'rtl'); // Set direction for the step content
+                    stepElement.innerHTML = stepText;
+                    container.appendChild(stepElement);
+                    
+                    setTimeout(() => {
+                        stepElement.classList.add('visible');
+                    }, 50);
+
+                }, index * 1000); // Display each step one second after the previous one
+            });
+
+            explained[equationKey] = true;
+        }
+    </script>
+
+</body>
+</html>
+
+
