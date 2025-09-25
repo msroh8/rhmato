@@ -89,46 +89,46 @@
     <script>
         const explanations = {
             a: {
-                title: "شرح حل 4x ≡ 2 (mod 3)",
+                title: "Explanation for 4x ≡ 2 (mod 3)",
                 steps: [
-                    "<strong>الخطوة 1: تبسيط المعادلة.</strong><br>المعامل <code>4</code> أكبر من المقياس <code>3</code>. يمكننا تبسيطه بأخذ باقي قسمة <code>4</code> على <code>3</code>.",
+                    "<strong>Step 1: Simplify the equation.</strong><br>The coefficient <code>4</code> is larger than the modulus <code>3</code>. We can simplify it by taking the remainder of <code>4</code> divided by <code>3</code>.",
                     "<code>4 mod 3 = 1</code>",
-                    "لذا، تصبح المعادلة: <code>1x ≡ 2 (mod 3)</code> أو ببساطة <code>x ≡ 2 (mod 3)</code>.",
-                    "<strong>الخطوة 2: إيجاد الحل.</strong><br>المعادلة المبسطة تخبرنا مباشرةً أن <code>x</code> يجب أن يساوي <code>2</code> عند مقياس <code>3</code>.",
-                    "أبسط عدد صحيح موجب يحقق هذا هو <code>x = 2</code>.",
-                    "<strong>الخطوة 3: التحقق من الحل.</strong><br>نعوض <code>x = 2</code> في المعادلة الأصلية: <code>4 * 2 = 8</code>.",
-                    "هل <code>8 ≡ 2 (mod 3)</code>؟ نعم، لأن <code>8 ÷ 3 = 2</code> والباقي <code>2</code>.",
-                    "<strong class='text-green-600'>إذن، الحل الصحيح هو x = 2.</strong>"
+                    "So, the equation becomes: <code>1x ≡ 2 (mod 3)</code> or simply <code>x ≡ 2 (mod 3)</code>.",
+                    "<strong>Step 2: Find the solution.</strong><br>The simplified equation directly tells us that <code>x</code> must be congruent to <code>2</code> modulo <code>3</code>.",
+                    "The smallest positive integer that satisfies this is <code>x = 2</code>.",
+                    "<strong>Step 3: Verify the solution.</strong><br>Substitute <code>x = 2</code> into the original equation: <code>4 * 2 = 8</code>.",
+                    "Is <code>8 ≡ 2 (mod 3)</code>? Yes, because <code>8 ÷ 3 = 2</code> with a remainder of <code>2</code>.",
+                    "<strong class='text-green-600'>Therefore, the correct solution is x = 2.</strong>"
                 ]
             },
             b: {
-                title: "شرح حل 7x ≡ 4 (mod 9)",
+                title: "Explanation for 7x ≡ 4 (mod 9)",
                 steps: [
-                    "<strong>الخطوة 1: تحليل المعادلة.</strong><br>المعامل <code>7</code> أصغر من المقياس <code>9</code>، لذلك لا نحتاج لتبسيطه. علينا إيجاد عدد <code>x</code> بحيث حاصل ضرب <code>7x</code> يترك باقي <code>4</code> عند قسمته على <code>9</code>.",
-                    "<strong>الخطوة 2: البحث عن حل بالتجربة.</strong><br>لنجرب بعض القيم الصغيرة لـ <code>x</code>:",
-                    "إذا كان <code>x = 1</code>:  <code>7 * 1 = 7</code>.  <code>7 mod 9 = 7</code>. (خطأ)",
-                    "إذا كان <code>x = 2</code>:  <code>7 * 2 = 14</code>. <code>14 mod 9 = 5</code>. (خطأ)",
-                    "إذا كان <code>x = 3</code>:  <code>7 * 3 = 21</code>. <code>21 mod 9 = 3</code>. (خطأ)",
-                    "إذا كان <code>x = 4</code>:  <code>7 * 4 = 28</code>. <code>28 mod 9 = 1</code>. (خطأ)",
-                    "إذا كان <code>x = 5</code>:  <code>7 * 5 = 35</code>. <code>35 mod 9 = 8</code>. (خطأ)",
-                    "إذا كان <code>x = 6</code>:  <code>7 * 6 = 42</code>. <code>42 mod 9 = 6</code>. (خطأ)",
-                    "إذا كان <code>x = 7</code>:  <code>7 * 7 = 49</code>. <code>49 mod 9 = 4</code>. (صحيح!)",
-                    "<strong>الخطوة 3: التحقق من الحل.</strong><br>وجدنا أن <code>x = 7</code> هو الحل.",
-                    "<strong class='text-green-600'>إذن، الحل الصحيح هو x = 7.</strong>"
+                    "<strong>Step 1: Analyze the equation.</strong><br>The coefficient <code>7</code> is smaller than the modulus <code>9</code>, so we don't need to simplify it. We need to find an integer <code>x</code> such that the product <code>7x</code> leaves a remainder of <code>4</code> when divided by <code>9</code>.",
+                    "<strong>Step 2: Find a solution by trial.</strong><br>Let's try some small values for <code>x</code>:",
+                    "If <code>x = 1</code>:  <code>7 * 1 = 7</code>.  <code>7 mod 9 = 7</code>. (Incorrect)",
+                    "If <code>x = 2</code>:  <code>7 * 2 = 14</code>. <code>14 mod 9 = 5</code>. (Incorrect)",
+                    "If <code>x = 3</code>:  <code>7 * 3 = 21</code>. <code>21 mod 9 = 3</code>. (Incorrect)",
+                    "If <code>x = 4</code>:  <code>7 * 4 = 28</code>. <code>28 mod 9 = 1</code>. (Incorrect)",
+                    "If <code>x = 5</code>:  <code>7 * 5 = 35</code>. <code>35 mod 9 = 8</code>. (Incorrect)",
+                    "If <code>x = 6</code>:  <code>7 * 6 = 42</code>. <code>42 mod 9 = 6</code>. (Incorrect)",
+                    "If <code>x = 7</code>:  <code>7 * 7 = 49</code>. <code>49 mod 9 = 4</code>. (Correct!)",
+                    "<strong>Step 3: Verify the solution.</strong><br>We found that <code>x = 7</code> is the solution.",
+                    "<strong class='text-green-600'>Therefore, the correct solution is x = 7.</strong>"
                 ]
             },
             c: {
-                title: "شرح حل 5x ≡ 3 (mod 11)",
+                title: "Explanation for 5x ≡ 3 (mod 11)",
                 steps: [
-                    "<strong>الخطوة 1: تحليل المعادلة.</strong><br>المعامل <code>5</code> أصغر من المقياس <code>11</code>. نبحث عن عدد <code>x</code> بحيث حاصل ضرب <code>5x</code> يترك باقي <code>3</code> عند قسمته على <code>11</code>.",
-                    "<strong>الخطوة 2: البحث عن حل بالتجربة.</strong><br>لنجرب بعض القيم لـ <code>x</code>:",
-                    "إذا كان <code>x = 1</code>:  <code>5 * 1 = 5</code>.   <code>5 mod 11 = 5</code>. (خطأ)",
-                    "إذا كان <code>x = 2</code>:  <code>5 * 2 = 10</code>.  <code>10 mod 11 = 10</code>. (خطأ)",
-                    "إذا كان <code>x = 3</code>:  <code>5 * 3 = 15</code>.  <code>15 mod 11 = 4</code>. (خطأ)",
-                    "إذا كان <code>x = 4</code>:  <code>5 * 4 = 20</code>.  <code>20 mod 11 = 9</code>. (خطأ)",
-                    "إذا كان <code>x = 5</code>:  <code>5 * 5 = 25</code>.  <code>25 mod 11 = 3</code>. (صحيح!)",
-                    "<strong>الخطوة 3: التحقق من الحل.</strong><br>وجدنا أن <code>x = 5</code> يحقق المعادلة.",
-                    "<strong class='text-green-600'>إذن، الحل الصحيح هو x = 5.</strong>"
+                    "<strong>Step 1: Analyze the equation.</strong><br>The coefficient <code>5</code> is smaller than the modulus <code>11</code>. We need to find an integer <code>x</code> such that the product <code>5x</code> leaves a remainder of <code>3</code> when divided by <code>11</code>.",
+                    "<strong>Step 2: Find a solution by trial.</strong><br>Let's try some values for <code>x</code>:",
+                    "If <code>x = 1</code>:  <code>5 * 1 = 5</code>.   <code>5 mod 11 = 5</code>. (Incorrect)",
+                    "If <code>x = 2</code>:  <code>5 * 2 = 10</code>.  <code>10 mod 11 = 10</code>. (Incorrect)",
+                    "If <code>x = 3</code>:  <code>5 * 3 = 15</code>.  <code>15 mod 11 = 4</code>. (Incorrect)",
+                    "If <code>x = 4</code>:  <code>5 * 4 = 20</code>.  <code>20 mod 11 = 9</code>. (Incorrect)",
+                    "If <code>x = 5</code>:  <code>5 * 5 = 25</code>.  <code>25 mod 11 = 3</code>. (Correct!)",
+                    "<strong>Step 3: Verify the solution.</strong><br>We found that <code>x = 5</code> satisfies the equation.",
+                    "<strong class='text-green-600'>Therefore, the correct solution is x = 5.</strong>"
                 ]
             }
         };
@@ -145,9 +145,8 @@
             data.steps.forEach((stepText, index) => {
                 setTimeout(() => {
                     const stepElement = document.createElement('div');
-                    // Add text-right for proper alignment of RTL text in an LTR container
-                    stepElement.className = 'p-4 bg-gray-100 rounded-md border border-gray-200 step text-right';
-                    stepElement.setAttribute('dir', 'rtl'); // Set direction for the step content
+                    // Removed text-right and dir=rtl for LTR English text
+                    stepElement.className = 'p-4 bg-gray-100 rounded-md border border-gray-200 step';
                     stepElement.innerHTML = stepText;
                     container.appendChild(stepElement);
                     
@@ -164,5 +163,4 @@
 
 </body>
 </html>
-
 
